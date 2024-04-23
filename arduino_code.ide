@@ -1,0 +1,86 @@
+int redLED = 3;
+int yellowLED = 5;
+int greenLED = 6;
+
+int pushButton = 4;
+unsigned long lastDebounceTime = 0;
+unsigned long debounceDelay = 5;
+int buttonState;
+int lastButtonState = HIGH;
+
+#include <Servo.h>
+Servo servo;
+int servoPin = 9;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+  
+  pinMode(pushButton, INPUT_PULLUP);
+
+  servo.attach(servoPin);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  if (Serial.available() > 0) {
+    String data = Serial.readString();
+
+    if (data.startsWith("Red")) 
+    {
+        data.replace("Red", "");
+        int brightness = data.toInt();
+        analogWrite(redLED, brightness);
+    }
+
+    if (data.startsWith("Yellow")) 
+    {
+      data.replace("Yellow", "");
+      int brightness = data.toInt();
+      analogWrite(yellowLED, brightness);
+    }
+
+    if (data.startsWith("Green")) 
+    {
+      data.replace("Green", "");
+      int brightness = data.toInt();
+      analogWrite(greenLED, brightness);
+    }
+
+    if (data.startsWith("Servo")) {
+      data.replace("Servo", "");
+      int angle = data.toInt();
+      servo.write(angle);
+    }
+  }
+ 
+
+  // A push button is independent to encoding and decoding of serial monitor inputs
+  handleButton();
+}
+
+// Debouncing of button (Use for counting the number of times a button is pushed with an interval time of receiving data)
+void handleButton(void) {
+  int reading = digitalRead(pushButton);
+
+  if (reading != lastButtonState) {
+    lastDebounceTime = millis();
+  }
+
+  if ( (millis() - lastDebounceTime) > debounceDelay) {
+    if (reading != buttonState) {
+      buttonState = reading;
+
+      if (buttonState == HIGH) {
+        Serial.println("p"); // Sending the data "p" to the GUI, suggested to use a char only for easy debugging
+      }
+    }
+  }
+
+  lastButtonState = reading;
+}

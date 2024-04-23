@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34729.46
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDS_Servo-Motor_Potentiometer_Push-Button", "LEDS_Servo-Motor_Potentiometer_Push-Button\LEDS_Servo-Motor_Potentiometer_Push-Button.csproj", "{4BD6FD9D-67EA-4135-A352-4C195337D25D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BD6FD9D-67EA-4135-A352-4C195337D25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD6FD9D-67EA-4135-A352-4C195337D25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD6FD9D-67EA-4135-A352-4C195337D25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD6FD9D-67EA-4135-A352-4C195337D25D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0643E3B2-4AA2-4CF3-8366-D8E758DC6E2E}
+	EndGlobalSection
+EndGlobal
