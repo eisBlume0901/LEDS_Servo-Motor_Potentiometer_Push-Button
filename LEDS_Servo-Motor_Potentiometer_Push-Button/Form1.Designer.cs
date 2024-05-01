@@ -222,15 +222,16 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             this.potentiometerProgressBar.Location = new System.Drawing.Point(26, 29);
             this.potentiometerProgressBar.Maximum = 1023;
             this.potentiometerProgressBar.Name = "potentiometerProgressBar";
-            this.potentiometerProgressBar.Size = new System.Drawing.Size(241, 38);
+            this.potentiometerProgressBar.Size = new System.Drawing.Size(300, 38);
             this.potentiometerProgressBar.TabIndex = 0;
             // 
             // potentiometerStatusRichTextBox
             // 
+            this.potentiometerStatusRichTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.potentiometerStatusRichTextBox.ForeColor = System.Drawing.Color.SeaGreen;
-            this.potentiometerStatusRichTextBox.Location = new System.Drawing.Point(283, 29);
+            this.potentiometerStatusRichTextBox.Location = new System.Drawing.Point(342, 29);
             this.potentiometerStatusRichTextBox.Name = "potentiometerStatusRichTextBox";
-            this.potentiometerStatusRichTextBox.Size = new System.Drawing.Size(112, 38);
+            this.potentiometerStatusRichTextBox.Size = new System.Drawing.Size(53, 38);
             this.potentiometerStatusRichTextBox.TabIndex = 1;
             this.potentiometerStatusRichTextBox.Text = "";
             // 

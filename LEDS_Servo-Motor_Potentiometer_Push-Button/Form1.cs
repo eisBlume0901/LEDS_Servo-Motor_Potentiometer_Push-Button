@@ -46,9 +46,9 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
                     buttonCounterRichTextBox.Text = Convert.ToString(buttonCounter);
                     break;
                 case 'P':
-                    String data = inputData.Substring(1).TrimEnd();
+                    String data = inputData.Substring(1).TrimEnd(); // Handled the whitespace at the end of the string to prevent errors
                     numData = Convert.ToSingle(data);
-                    volts = numData * 5 / 1024;
+                    volts = numData * 5 / 1023;
                     potentiometerStatusRichTextBox.Text = String.Format("{0:0.00}", volts);
                     potentiometerProgressBar.Value = Convert.ToInt16(inputData.Substring(1));
                     break;
