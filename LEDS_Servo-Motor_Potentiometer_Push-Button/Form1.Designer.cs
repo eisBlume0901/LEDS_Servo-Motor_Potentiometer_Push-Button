@@ -148,17 +148,18 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             this.groupBox2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupBox2.Location = new System.Drawing.Point(27, 327);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(242, 196);
+            this.groupBox2.Size = new System.Drawing.Size(242, 206);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Button Counter";
             // 
             // buttonCounterRichTextBox
             // 
-            this.buttonCounterRichTextBox.Font = new System.Drawing.Font("Malgun Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCounterRichTextBox.Location = new System.Drawing.Point(16, 29);
+            this.buttonCounterRichTextBox.Font = new System.Drawing.Font("Malgun Gothic", 55.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCounterRichTextBox.ForeColor = System.Drawing.Color.SeaGreen;
+            this.buttonCounterRichTextBox.Location = new System.Drawing.Point(26, 40);
             this.buttonCounterRichTextBox.Name = "buttonCounterRichTextBox";
-            this.buttonCounterRichTextBox.Size = new System.Drawing.Size(198, 146);
+            this.buttonCounterRichTextBox.Size = new System.Drawing.Size(186, 142);
             this.buttonCounterRichTextBox.TabIndex = 0;
             this.buttonCounterRichTextBox.Text = "";
             // 
@@ -171,7 +172,7 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             this.groupBox3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupBox3.Location = new System.Drawing.Point(295, 327);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(204, 196);
+            this.groupBox3.Size = new System.Drawing.Size(204, 206);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Servo Controller";
@@ -179,7 +180,7 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             // servoAngleButton
             // 
             this.servoAngleButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.servoAngleButton.Location = new System.Drawing.Point(28, 119);
+            this.servoAngleButton.Location = new System.Drawing.Point(28, 126);
             this.servoAngleButton.Name = "servoAngleButton";
             this.servoAngleButton.Size = new System.Drawing.Size(156, 56);
             this.servoAngleButton.TabIndex = 6;
@@ -189,10 +190,11 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             // 
             // servoAngle
             // 
-            this.servoAngle.Font = new System.Drawing.Font("Malgun Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servoAngle.Font = new System.Drawing.Font("Malgun Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servoAngle.ForeColor = System.Drawing.Color.SeaGreen;
             this.servoAngle.Location = new System.Drawing.Point(28, 40);
             this.servoAngle.Name = "servoAngle";
-            this.servoAngle.Size = new System.Drawing.Size(156, 53);
+            this.servoAngle.Size = new System.Drawing.Size(156, 72);
             this.servoAngle.TabIndex = 0;
             this.servoAngle.Text = "";
             // 
@@ -200,7 +202,7 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 545);
+            this.ClientSize = new System.Drawing.Size(918, 564);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

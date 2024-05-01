@@ -2,7 +2,7 @@ int redLED = 3;
 int yellowLED = 5;
 int greenLED = 6;
 
-int pushButton = 4;
+int pushButton = 2;
 unsigned long lastDebounceTime = 0;
 unsigned long debounceDelay = 5;
 int buttonState;
@@ -75,6 +75,7 @@ void handleButton(void) {
   if ( (millis() - lastDebounceTime) > debounceDelay) {
     if (reading != buttonState) {
       buttonState = reading;
+
 
       if (buttonState == HIGH) {
         Serial.println("p"); // Sending the data "p" to the GUI, suggested to use a char only for easy debugging
