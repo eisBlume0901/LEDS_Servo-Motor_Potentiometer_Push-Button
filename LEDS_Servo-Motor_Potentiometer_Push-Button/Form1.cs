@@ -12,12 +12,13 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
 {
     public partial class Form1 : Form
     {
+        private String redValue = "";
+        private String yellowValue = "";
+        private String greenValue = "";
+
         public delegate void delegate1(String dataReceived); // Useful for aligning different running threads
         private static int buttonCounter;
 
-        private String redValue;
-        private String yellowValue;
-        private String greenValue;
         public Form1()
         {
             InitializeComponent();
@@ -34,15 +35,22 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
         public void changeTextIntoCounterData(String inputData)
         {
             // Handles data sent from Arduino
-            char firstChar;
-
-            firstChar = inputData[0];
-
-            switch (firstChar)
+            char firstKey;
+            Single numData;
+            Single volts; // Holds the voltage output received from the potentiometer reading
+            firstKey = inputData[0];
+            switch(firstKey)
             {
-                case 'p':
+                case 'B':
                     buttonCounter++;
                     buttonCounterRichTextBox.Text = Convert.ToString(buttonCounter);
+                    break;
+                case 'P':
+                    String data = inputData.Substring(1).TrimEnd();
+                    numData = Convert.ToSingle(data);
+                    volts = numData * 5 / 1024;
+                    potentiometerStatusRichTextBox.Text = String.Format("{0:0.00}", volts);
+                    potentiometerProgressBar.Value = Convert.ToInt16(inputData.Substring(1));
                     break;
             }
         }

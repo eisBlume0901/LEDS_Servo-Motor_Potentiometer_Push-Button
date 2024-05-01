@@ -43,12 +43,16 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.servoAngleButton = new System.Windows.Forms.Button();
             this.servoAngle = new System.Windows.Forms.RichTextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.potentiometerProgressBar = new System.Windows.Forms.ProgressBar();
+            this.potentiometerStatusRichTextBox = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenLEDTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowLEDTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redLEDTrackBar)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -146,20 +150,20 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             this.groupBox2.Controls.Add(this.buttonCounterRichTextBox);
             this.groupBox2.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(27, 327);
+            this.groupBox2.Location = new System.Drawing.Point(518, 133);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(242, 206);
+            this.groupBox2.Size = new System.Drawing.Size(188, 176);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Button Counter";
             // 
             // buttonCounterRichTextBox
             // 
-            this.buttonCounterRichTextBox.Font = new System.Drawing.Font("Malgun Gothic", 55.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCounterRichTextBox.Font = new System.Drawing.Font("Malgun Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCounterRichTextBox.ForeColor = System.Drawing.Color.SeaGreen;
             this.buttonCounterRichTextBox.Location = new System.Drawing.Point(26, 40);
             this.buttonCounterRichTextBox.Name = "buttonCounterRichTextBox";
-            this.buttonCounterRichTextBox.Size = new System.Drawing.Size(186, 142);
+            this.buttonCounterRichTextBox.Size = new System.Drawing.Size(137, 108);
             this.buttonCounterRichTextBox.TabIndex = 0;
             this.buttonCounterRichTextBox.Text = "";
             // 
@@ -170,9 +174,9 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             this.groupBox3.Controls.Add(this.servoAngle);
             this.groupBox3.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox3.Location = new System.Drawing.Point(295, 327);
+            this.groupBox3.Location = new System.Drawing.Point(729, 133);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(204, 206);
+            this.groupBox3.Size = new System.Drawing.Size(204, 176);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Servo Controller";
@@ -180,7 +184,7 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             // servoAngleButton
             // 
             this.servoAngleButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.servoAngleButton.Location = new System.Drawing.Point(28, 126);
+            this.servoAngleButton.Location = new System.Drawing.Point(28, 107);
             this.servoAngleButton.Name = "servoAngleButton";
             this.servoAngleButton.Size = new System.Drawing.Size(156, 56);
             this.servoAngleButton.TabIndex = 6;
@@ -190,19 +194,52 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             // 
             // servoAngle
             // 
-            this.servoAngle.Font = new System.Drawing.Font("Malgun Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servoAngle.Font = new System.Drawing.Font("Malgun Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.servoAngle.ForeColor = System.Drawing.Color.SeaGreen;
             this.servoAngle.Location = new System.Drawing.Point(28, 40);
             this.servoAngle.Name = "servoAngle";
-            this.servoAngle.Size = new System.Drawing.Size(156, 72);
+            this.servoAngle.Size = new System.Drawing.Size(156, 61);
             this.servoAngle.TabIndex = 0;
             this.servoAngle.Text = "";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.Honeydew;
+            this.groupBox4.Controls.Add(this.potentiometerStatusRichTextBox);
+            this.groupBox4.Controls.Add(this.potentiometerProgressBar);
+            this.groupBox4.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.groupBox4.Location = new System.Drawing.Point(518, 22);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(415, 92);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Potentiometer Value";
+            // 
+            // potentiometerProgressBar
+            // 
+            this.potentiometerProgressBar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.potentiometerProgressBar.Location = new System.Drawing.Point(26, 29);
+            this.potentiometerProgressBar.Maximum = 1023;
+            this.potentiometerProgressBar.Name = "potentiometerProgressBar";
+            this.potentiometerProgressBar.Size = new System.Drawing.Size(241, 38);
+            this.potentiometerProgressBar.TabIndex = 0;
+            // 
+            // potentiometerStatusRichTextBox
+            // 
+            this.potentiometerStatusRichTextBox.ForeColor = System.Drawing.Color.SeaGreen;
+            this.potentiometerStatusRichTextBox.Location = new System.Drawing.Point(283, 29);
+            this.potentiometerStatusRichTextBox.Name = "potentiometerStatusRichTextBox";
+            this.potentiometerStatusRichTextBox.Size = new System.Drawing.Size(112, 38);
+            this.potentiometerStatusRichTextBox.TabIndex = 1;
+            this.potentiometerStatusRichTextBox.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 564);
+            this.ClientSize = new System.Drawing.Size(967, 334);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -215,6 +252,7 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
             ((System.ComponentModel.ISupportInitialize)(this.redLEDTrackBar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -234,6 +272,9 @@ namespace LEDS_Servo_Motor_Potentiometer_Push_Button
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button servoAngleButton;
         private System.Windows.Forms.RichTextBox servoAngle;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ProgressBar potentiometerProgressBar;
+        private System.Windows.Forms.RichTextBox potentiometerStatusRichTextBox;
     }
 }
 

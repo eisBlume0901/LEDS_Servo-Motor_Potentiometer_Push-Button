@@ -12,6 +12,8 @@ int lastButtonState = HIGH;
 Servo servo;
 int servoPin = 9;
 
+int potentiometer = A0;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -23,11 +25,18 @@ void setup() {
   pinMode(pushButton, INPUT_PULLUP);
 
   servo.attach(servoPin);
+
+  pinMode(potentiometer, INPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 
+  // A push button is independent to encoding and decoding of serial monitor inputs
+  handleButton();
+  // A potentiometer is independent to encoding and decoding of serial monitor inputs
+  handlePotentiometer();
+  
   if (Serial.available() > 0) {
     String data = Serial.readString();
 
@@ -60,8 +69,6 @@ void loop() {
   }
  
 
-  // A push button is independent to encoding and decoding of serial monitor inputs
-  handleButton();
 }
 
 // Debouncing of button (Use for counting the number of times a button is pushed with an interval time of receiving data)
@@ -78,10 +85,28 @@ void handleButton(void) {
 
 
       if (buttonState == HIGH) {
-        Serial.println("p"); // Sending the data "p" to the GUI, suggested to use a char only for easy debugging
+        Serial.println('B'); // Sending the data "B" to the GUI, suggested to use a char only for easy debugging
       }
     }
   }
 
   lastButtonState = reading;
+}
+
+void handlePotentiometer(void) {
+  String value;
+  static int old = 0;
+  int current = 0, upper, lower;
+  current = analogRead(potentiometer);
+  upper = current + 2;
+  lower = current - 2;
+  if (current != old) {
+    if (old <= lower || old >= upper) {
+      value = String(current);
+      Serial.print('P'); // Sending the data "P" to the GUI, suggested to use char only since String does not work
+      Serial.println(value);
+      old = current;
+
+    }
+  } 
 }
